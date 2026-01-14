@@ -1,0 +1,19 @@
+{
+  "name": "faq-data",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "faq-data/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/faq-data",
+        "main": "faq-data/src/index.ts",
+        "tsConfig": "faq-data/tsconfig.lib.json",
+        "assets": ["faq-data/*.md"]
+      }
+    }
+  }
+}
