@@ -28,7 +28,8 @@
           "buildDepsName": "build-deps",
           "watchDepsName": "watch-deps"
         }
-      }
+      },
+      "exclude": ["faq-data/*", "libs/faq-data/*", "libs/styles/*"]
     },
     {
       "plugin": "@nx/cypress/plugin",
@@ -60,11 +61,12 @@
       }
     },
     {
-      "plugin": "@nx/vitest",
+      "plugin": "@nx/js/typescript",
+      "include": ["faq-data/*", "libs/faq-data/*", "libs/styles/*"],
       "options": {
-        "testTargetName": "test",
-        "ciTargetName": "test-ci",
-        "testMode": "watch"
+        "typecheck": {
+          "targetName": "typecheck"
+        }
       }
     }
   ],
@@ -82,11 +84,6 @@
         "{workspaceRoot}/.eslintignore",
         "{workspaceRoot}/eslint.config.mjs"
       ]
-    },
-    "@nx/js:tsc": {
-      "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
     }
   },
   "generators": {

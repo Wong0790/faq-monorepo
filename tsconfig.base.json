@@ -16,7 +16,8 @@
     "target": "es2022",
     "customConditions": ["@org/source"],
     "paths": {
-      "@org/faq-data": ["faq-data/src/index.ts"]
+      "@org/faq-data": ["libs/faq-data/src/index.ts"],
+      "@org/styles": ["libs/styles/src/index.ts"]
     }
   }
 }
